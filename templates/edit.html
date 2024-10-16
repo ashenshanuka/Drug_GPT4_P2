@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Edit Medication</h2>
+<form method="POST">
+    <label for="name">Name:</label><br/>
+    <input type="text" id="name" name="name" value="{{ medication[1] }}" required><br/>
+    
+    <label for="stock">Stock:</label><br/>
+    <input type="number" id="stock" name="stock" value="{{ medication[2] }}" required><br/>
+    
+    <label for="cost">Cost:</label><br/>
+    <input type="number" step="0.01" id="cost" name="cost" value="{{ medication[3] }}" required><br/>
+    
+    <label for="shelf_life">Shelf Life:</label><br/>
+    <input type="date" id="shelf_life" name="shelf_life" value="{{ medication[4] }}" required><br/>
+    
+    <input type="submit" value="Update Medication">
+</form>
+<a href="{{ url_for('index') }}">Back to Inventory</a>
+{% endblock %}
